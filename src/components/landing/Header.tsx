@@ -48,7 +48,7 @@ export default function Header() {
 
         <div className="hidden md:block">
           <Button asChild variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <a href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
+            <a href="https://calendly.com/victordebelu/consultation-with-numera-finance" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
           </Button>
         </div>
 
@@ -74,7 +74,7 @@ export default function Header() {
                   </Link>
                 ))}
                 <Button asChild variant="default" className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <a href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
+                  <a href="https://calendly.com/victordebelu/consultation-with-numera-finance" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
                 </Button>
               </div>
             </SheetContent>

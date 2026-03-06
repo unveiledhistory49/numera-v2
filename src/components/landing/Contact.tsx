@@ -24,7 +24,7 @@ const formSchema = z.object({
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
-  
+
   const form = useForm<ContactMessageInput>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -106,7 +106,7 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
-                   <FormField
+                  <FormField
                     control={form.control}
                     name="phone"
                     render={({ field }) => (
@@ -139,38 +139,38 @@ export default function Contact() {
               </Form>
             </CardContent>
           </Card>
-          
+
           <div className="space-y-8 my-auto">
-             <div className="flex items-start gap-4">
-               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-               <div>
-                 <h3 className="text-lg font-semibold">Email</h3>
-                 <p className="text-foreground/80">Reach out to us directly.</p>
-                 <a href="mailto:info@numera.live" className="text-primary hover:underline">info@numera.live</a>
-               </div>
-             </div>
-             <div className="flex items-start gap-4">
-               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <Calendar className="h-6 w-6 text-primary" />
-                </div>
-               <div>
-                 <h3 className="text-lg font-semibold">Schedule A Meeting</h3>
-                 <p className="text-foreground/80">Let's connect! Book a time that works for you.</p>
-                 <a href="https://calendly.com/victordebelu/30min" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Book a meeting</a>
-               </div>
-             </div>
-             <div className="flex items-start gap-4">
-               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-               <div>
-                 <h3 className="text-lg font-semibold">Office</h3>
-                 <p className="text-foreground/80">274 Lynn Braxton St.</p>
-                 <p className="text-foreground/80">San Francisco, CA 94159</p>
-               </div>
-             </div>
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                <Mail className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold">Email</h3>
+                <p className="text-foreground/80">Reach out to us directly.</p>
+                <a href="mailto:info@numera.live" className="text-primary hover:underline">info@numera.live</a>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                <Calendar className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold">Schedule A Meeting</h3>
+                <p className="text-foreground/80">Let's connect! Book a time that works for you.</p>
+                <a href="https://calendly.com/victordebelu/consultation-with-numera-finance" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Book a meeting</a>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                <MapPin className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold">Office</h3>
+                <p className="text-foreground/80">274 Lynn Braxton St.</p>
+                <p className="text-foreground/80">San Francisco, CA 94159</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

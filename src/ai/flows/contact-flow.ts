@@ -40,7 +40,7 @@ const contactFlow = ai.defineFlow(
     try {
       await resend.emails.send({
         from: 'Contact Form <onboarding@resend.dev>',
-        to: 'info@numera.live',
+        to: 'numeraservices@outlook.com',
         subject: `New message from ${input.name}`,
         html: `
           <p>You received a new message from your website contact form.</p>

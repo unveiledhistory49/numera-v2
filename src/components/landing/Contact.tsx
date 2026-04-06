@@ -148,7 +148,7 @@ export default function Contact() {
               <div>
                 <h3 className="text-lg font-semibold">Email</h3>
                 <p className="text-foreground/80">Reach out to us directly.</p>
-                <a href="mailto:info@numera.live" className="text-primary hover:underline">info@numera.live</a>
+                <a href="mailto:numeraservices@outlook.com" className="text-primary hover:underline">numeraservices@outlook.com</a>
               </div>
             </div>
             <div className="flex items-start gap-4">

@@ -1,6 +1,6 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpenCheck, ReceiptText, Users, Lightbulb } from "lucide-react";
+import { BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -30,6 +30,11 @@ const services: Service[] = [
     icon: Lightbulb,
     title: "Financial Consulting",
     description: "Gain a strategic partner to guide your financial future. We offer expert consulting on budgeting, forecasting, and financial planning to help your business achieve its goals."
+  },
+  {
+    icon: GraduationCap,
+    title: "Student Loan Forgiveness Assistance",
+    description: "Navigate the complex landscape of federal and private student loan forgiveness options. We help identify qualifying programs, organize documentation, and manage applications to reduce or eliminate your educational debt."
   }
 ];
 
@@ -50,26 +55,29 @@ export default function Services() {
             Comprehensive financial solutions designed for your peace of mind.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
+              className="h-full"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                <CardHeader>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <service.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="mt-4 text-lg font-semibold">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-foreground/70">{service.description}</p>
-                </CardContent>
+              <Card className="text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col justify-between">
+                <div>
+                  <CardHeader>
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                      <service.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="mt-4 text-lg font-semibold">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-foreground/70">{service.description}</p>
+                  </CardContent>
+                </div>
               </Card>
             </motion.div>
           ))}

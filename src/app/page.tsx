@@ -1,6 +1,7 @@
 import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
 import Services from '@/components/landing/Services';
+import Pricing from '@/components/landing/Pricing';
 import About from '@/components/landing/About';
 import Testimonials from '@/components/landing/Testimonials';
 import Contact from '@/components/landing/Contact';
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <Services />
+        <Pricing />
         <About />
         <Testimonials />
         <Contact />

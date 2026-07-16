@@ -19,9 +19,8 @@ interface PricingPlan {
 const plans: PricingPlan[] = [
   {
     icon: BookOpenCheck,
-    title: "Monthly Bookkeeping",
+    title: "Bookkeeping",
     price: "$249",
-    period: "/month",
     description: "Keep your finances organized and your business running smoothly.",
     features: [
       "Monthly transaction categorization",
@@ -85,7 +84,7 @@ const plans: PricingPlan[] = [
       "Application preparation",
       "Employment certification assistance (if applicable)",
       "Document review before submission",
-      "Guidance until your application is successfully submitted",
+      "Guidance until your application is successfully approved",
     ],
   },
 ];

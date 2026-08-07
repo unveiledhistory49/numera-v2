@@ -1,5 +1,5 @@
 "use client";
-import { BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap, ShieldCheck } from "lucide-react";
+import { BookOpenCheck, ReceiptText, Lightbulb, GraduationCap, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Reveal from "@/components/landing/Reveal";
 
@@ -19,11 +19,6 @@ const services: Service[] = [
     icon: ReceiptText,
     title: "Tax Preparation & Advisory",
     description: "Navigate the complexities of tax season with ease. Our experts ensure accurate tax preparation and provide strategic advice to minimize liabilities and maximize returns."
-  },
-  {
-    icon: Users,
-    title: "Payroll Services",
-    description: "Streamline your payroll process with our reliable services. We handle everything from salary processing to tax filings, ensuring your team is paid accurately and on time."
   },
   {
     icon: Lightbulb,

@@ -39,11 +39,6 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="#services" className="text-slate/70 transition-colors hover:text-ledger">
-                    Payroll
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#services" className="text-slate/70 transition-colors hover:text-ledger">
                     Consulting
                   </Link>
                 </li>

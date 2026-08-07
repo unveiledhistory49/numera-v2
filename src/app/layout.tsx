@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const title = 'Numera Solutions | Expert Tax, Bookkeeping, & Payroll Services';
-const description = 'Numera Solutions offers expert tax preparation, bookkeeping, payroll, and financial consulting for small businesses. Simplify your finances and amplify your success. Get a free consultation today.';
+const title = 'Numera Solutions | Expert Tax, Bookkeeping, & Credit Repair Services';
+const description = 'Numera Solutions offers expert tax preparation, bookkeeping, credit repair, and financial consulting for small businesses. Simplify your finances and amplify your success. Get a free consultation today.';
 const url = 'https://numera.live';
 const imageUrl = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&crop=entropy&q=80';
 

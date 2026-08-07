@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap, ShieldCheck } from "lucide-react";
+import { Check, BookOpenCheck, ReceiptText, Lightbulb, GraduationCap, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import LedgerFigure from "@/components/landing/LedgerFigure";
@@ -43,20 +43,6 @@ const plans: PricingPlan[] = [
       "Electronic filing (where applicable)",
       "Answering your tax-related questions",
       "Copy of your completed return for your records",
-    ],
-  },
-  {
-    icon: Users,
-    title: "Payroll Services",
-    price: "$179",
-    description: "Reliable payroll management so you can focus on your business.",
-    features: [
-      "Payroll processing",
-      "Employee payment calculations",
-      "Payroll tax calculations",
-      "Pay stub preparation",
-      "Payroll reports",
-      "Ongoing payroll support",
     ],
   },
   {
@@ -116,7 +102,7 @@ export default function Pricing() {
               Professional Financial Services at Simple, Transparent Pricing
             </p>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate/80">
-              Whether you need ongoing bookkeeping, tax preparation, payroll support, business consulting, or student loan forgiveness assistance, we provide expert services with no hidden fees.
+              Whether you need ongoing bookkeeping, tax preparation, business consulting, or student loan forgiveness assistance, we provide expert services with no hidden fees.
             </p>
           </div>
         </Reveal>
@@ -141,7 +127,6 @@ export default function Pricing() {
                       <LedgerFigure
                         value={plan.price}
                         tone="navy"
-                        chip
                         className="text-3xl"
                       />
                     </div>

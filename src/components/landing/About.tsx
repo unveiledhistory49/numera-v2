@@ -26,7 +26,7 @@ export default function About() {
           </Reveal>
           <Reveal className="order-1 lg:order-2">
             <Image
-              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=800&fit=crop&crop=entropy&auto=format&q=70"
+              src="/team.jpg"
               alt="The Numera team collaborating in an office meeting"
               width={600}
               height={800}

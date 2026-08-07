@@ -10,16 +10,22 @@ const testimonials = [
     avatar: "AH"
   },
   {
-    quote: "I was spending too much time trying to handle payroll and taxes on my own. Numera not only streamlined the process but also identified cost-saving opportunities I hadn't considered. Their expertise saved me money and gave me back precious time to focus on my team and operations.",
-    name: "Sophia Bennett",
-    title: "Restaurant Owner",
-    avatar: "SB"
+    quote: "After medical school, I was paying down my loans for years without really making a dent. Numera stepped in and handled everything, they filed for loan forgiveness directly with my loan servicer. Shortly after, my loans were forgiven. I still can't believe how much stress they took off my plate.",
+    name: "Elizabeth Robinson",
+    title: "Healthcare Professional",
+    avatar: "ER"
   },
   {
     quote: "Tax season used to be a nightmare for me. Numera made it so simple. They ensured everything was accurate and filed on time, which saved me from penalties. Their team is professional, approachable, and always ready to answer my questions. I can’t imagine going through another tax season without them.",
     name: "Nathaniel Reed",
     title: "Freelance Designer",
     avatar: "NR"
+  },
+  {
+    quote: "I had my heart set on a house, but with a credit score of 539, I couldn’t qualify for anything close to a reasonable rate. I came to Numera feeling pretty hopeless. Within just a few weeks, they helped raise my score to 716, high enough that I easily qualified for the home I wanted. I’m still amazed at how fast and smooth the process was.",
+    name: "Nora Thompson",
+    title: "Project Manager",
+    avatar: "NT"
   }
 ];
 

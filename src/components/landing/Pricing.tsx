@@ -7,7 +7,6 @@ import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import LedgerFigure from "@/components/landing/LedgerFigure";
 import Reveal from "@/components/landing/Reveal";
-import { cn } from "@/lib/utils";
 
 interface PricingPlan {
   icon: LucideIcon;
@@ -122,42 +121,30 @@ export default function Pricing() {
           </div>
         </Reveal>
 
-        <div className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 lg:snap-none lg:overflow-visible lg:pb-0">
-          {plans.map((plan, index) => {
-            const isFeatured = plan.title === "Bookkeeping";
-            return (
-              <Reveal
-                key={plan.title}
-                delay={index * 0.05}
-                className="h-auto w-full shrink-0 basis-full snap-center sm:basis-1/2 lg:h-auto lg:flex-1 lg:shrink lg:basis-auto"
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {plans.map((plan, index) => (
+            <Reveal
+              key={plan.title}
+              delay={index * 0.05}
+              className="h-full"
+            >
+              <Card
+                className="flex h-full flex-col border border-ink/10"
               >
-                <Card
-                  className={cn(
-                    "flex h-full flex-col",
-                    isFeatured
-                      ? "border-2 border-brass shadow-lg shadow-brass/10"
-                      : "border border-ink/10"
-                  )}
-                >
-                  <div className="flex h-full flex-col p-6 sm:p-7">
-                    <div className="flex flex-1 flex-col">
-                      {isFeatured && (
-                        <span className="mb-4 inline-flex w-fit items-center rounded-sm border border-brass/40 bg-brass/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-brass">
-                          Most Popular
-                        </span>
-                      )}
-                      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-ink/5">
-                        <plan.icon className="h-5 w-5 text-ink/70" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-ink">{plan.title}</h3>
-                      <div className="mt-3">
-                        <LedgerFigure
-                          value={plan.price}
-                          tone={isFeatured ? "brass" : "navy"}
-                          chip
-                          className="text-3xl"
-                        />
-                      </div>
+                <div className="flex h-full flex-col p-6 sm:p-7">
+                  <div className="flex flex-1 flex-col">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-ink/5">
+                      <plan.icon className="h-5 w-5 text-ink/70" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-ink">{plan.title}</h3>
+                    <div className="mt-3">
+                      <LedgerFigure
+                        value={plan.price}
+                        tone="navy"
+                        chip
+                        className="text-3xl"
+                      />
+                    </div>
                       <p className="mt-3 text-sm leading-relaxed text-slate/70">
                         {plan.description}
                       </p>
@@ -188,8 +175,7 @@ export default function Pricing() {
                   </div>
                 </Card>
               </Reveal>
-            );
-          })}
+          ))}
         </div>
 
         <Reveal delay={0.15}>

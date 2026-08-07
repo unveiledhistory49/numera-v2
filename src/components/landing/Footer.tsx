@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-ink py-12 sm:py-16">
+    <footer className="border-t border-ink/10 bg-paper py-12 sm:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <Reveal>
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -20,50 +20,50 @@ export default function Footer() {
                   className="h-12 w-auto sm:h-16"
                 />
               </Link>
-              <p className="mt-4 max-w-xs text-sm text-paper/70">
+              <p className="mt-4 max-w-xs text-sm text-slate">
                 Your partner in financial success.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-paper">Services</h4>
+              <h4 className="font-semibold text-ink">Services</h4>
               <ul className="mt-4 space-y-2.5 text-sm">
                 <li>
-                  <Link href="#services" className="text-paper/70 transition-colors hover:text-white">
+                  <Link href="#services" className="text-slate/70 transition-colors hover:text-ledger">
                     Bookkeeping
                   </Link>
                 </li>
                 <li>
-                  <Link href="#services" className="text-paper/70 transition-colors hover:text-white">
+                  <Link href="#services" className="text-slate/70 transition-colors hover:text-ledger">
                     Tax Advisory
                   </Link>
                 </li>
                 <li>
-                  <Link href="#services" className="text-paper/70 transition-colors hover:text-white">
+                  <Link href="#services" className="text-slate/70 transition-colors hover:text-ledger">
                     Payroll
                   </Link>
                 </li>
                 <li>
-                  <Link href="#services" className="text-paper/70 transition-colors hover:text-white">
+                  <Link href="#services" className="text-slate/70 transition-colors hover:text-ledger">
                     Consulting
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-paper">Company</h4>
+              <h4 className="font-semibold text-ink">Company</h4>
               <ul className="mt-4 space-y-2.5 text-sm">
                 <li>
-                  <Link href="#about" className="text-paper/70 transition-colors hover:text-white">
+                  <Link href="#about" className="text-slate/70 transition-colors hover:text-ledger">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#pricing" className="text-paper/70 transition-colors hover:text-white">
+                  <Link href="#pricing" className="text-slate/70 transition-colors hover:text-ledger">
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="text-paper/70 transition-colors hover:text-white">
+                  <Link href="#contact" className="text-slate/70 transition-colors hover:text-ledger">
                     Contact
                   </Link>
                 </li>
@@ -71,9 +71,9 @@ export default function Footer() {
             </div>
           </div>
         </Reveal>
-        <div className="mt-12 border-t border-paper/15 pt-8 text-center text-sm text-paper/60">
+        <div className="mt-12 border-t border-ink/10 pt-8 text-center text-sm text-slate/60">
           <p>
-            &copy; <span className="ledger-figure font-numerals">{year}</span>{" "}
+            &copy; <span className="ledger-figure text-ink font-numerals">{year}</span>{" "}
             Numera Solutions. All rights reserved.
           </p>
         </div>

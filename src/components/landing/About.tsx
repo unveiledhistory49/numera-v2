@@ -25,15 +25,13 @@ export default function About() {
             </div>
           </Reveal>
           <Reveal className="order-1 lg:order-2">
-            <div className="border border-ink bg-white p-3 rounded-md">
-              <Image
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=800&fit=crop&crop=entropy&auto=format&q=70"
-                alt="The Numera team collaborating in an office meeting"
-                width={600}
-                height={800}
-                className="h-auto w-full rounded-[2px] object-cover"
-              />
-            </div>
+            <Image
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=800&fit=crop&crop=entropy&auto=format&q=70"
+              alt="The Numera team collaborating in an office meeting"
+              width={600}
+              height={800}
+              className="h-auto w-full rounded-2xl object-cover"
+            />
           </Reveal>
         </div>
       </div>

@@ -10,7 +10,7 @@ export default function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative bg-paper pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32">
+    <section className="relative bg-paper pt-10 pb-12 sm:pt-12 sm:pb-16 lg:pt-14">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2 lg:gap-8">
           <div className="flex items-center bg-ink p-8 sm:p-12 lg:p-16">
@@ -40,7 +40,7 @@ export default function Hero() {
                 <Button asChild size="lg" className="bg-ledger text-white hover:bg-ledger/90">
                   <a href="https://calendly.com/victordebelu/consultation-with-numera-finance" target="_blank" rel="noopener noreferrer">Free Consultation</a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border border-white/40 text-white hover:bg-white hover:text-ink">
+                <Button asChild variant="outline" size="lg" className="border border-white/60 bg-white/5 text-white hover:bg-white hover:text-ink">
                   <Link href="/#services">Our Services</Link>
                 </Button>
               </motion.div>
@@ -52,7 +52,7 @@ export default function Hero() {
             transition={{ delay: reduce ? 0 : 0.1, duration: reduce ? 0 : 0.6, ease: "easeOut" }}
             className="relative h-72 sm:h-96 lg:h-auto w-full"
           >
-            <div className="absolute inset-0 border border-ink">
+            <div className="absolute inset-0">
               <Image
                 src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=1400&fit=crop&crop=entropy&auto=format&q=70"
                 alt="Business financial documents and calculator on a desk"

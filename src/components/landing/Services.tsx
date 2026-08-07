@@ -56,7 +56,7 @@ export default function Services() {
               className="h-full"
               delay={index * 0.06}
             >
-              <div className="flex h-full flex-col rounded-lg border border-ink/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div className="flex h-12 w-12 items-center justify-center rounded-md border border-ink/10">
                   <service.icon className="h-5 w-5 text-ledger" strokeWidth={1.75} />
                 </div>

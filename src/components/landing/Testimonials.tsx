@@ -40,13 +40,13 @@ export default function Testimonials() {
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <Reveal key={index} delay={index * 0.06} className="h-full">
-              <figure className="flex h-full flex-col border border-ink/10 bg-white p-6">
+              <figure className="flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6">
                 <blockquote className="flex-grow text-slate leading-relaxed">
                   &quot;{testimonial.quote}&quot;
                 </blockquote>
                 <figcaption className="mt-6 flex items-center">
-                  <Avatar className="h-10 w-10 bg-ink">
-                    <AvatarFallback className="text-white font-semibold text-sm">
+                  <Avatar className="h-10 w-10">
+                    <AvatarFallback className="bg-ink font-semibold text-sm text-white">
                       {testimonial.avatar}
                     </AvatarFallback>
                   </Avatar>

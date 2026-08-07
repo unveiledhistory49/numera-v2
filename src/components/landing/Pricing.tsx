@@ -1,17 +1,18 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import LedgerFigure from "@/components/landing/LedgerFigure";
+import Reveal from "@/components/landing/Reveal";
+import { cn } from "@/lib/utils";
 
 interface PricingPlan {
   icon: LucideIcon;
   title: string;
   price: string;
-  period?: string;
   description: string;
   features: string[];
 }
@@ -89,82 +90,103 @@ const plans: PricingPlan[] = [
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-12 sm:py-16 lg:py-24 bg-card">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">
-            Our Pricing
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg font-medium text-foreground">
-            Professional Financial Services at Simple, Transparent Pricing
-          </p>
-          <p className="mt-4 max-w-3xl mx-auto text-base leading-8 text-foreground/80">
-            Whether you need ongoing bookkeeping, tax preparation, payroll support, business consulting, or student loan forgiveness assistance, we provide expert services with no hidden fees.
-          </p>
+    <section id="pricing" className="bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
+        <Reveal>
+          <div className="text-center">
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+              Our Pricing
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg font-medium text-ink">
+              Professional Financial Services at Simple, Transparent Pricing
+            </p>
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate/80">
+              Whether you need ongoing bookkeeping, tax preparation, payroll support, business consulting, or student loan forgiveness assistance, we provide expert services with no hidden fees.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 lg:snap-none lg:overflow-visible lg:pb-0">
+          {plans.map((plan, index) => {
+            const isFeatured = plan.title === "Bookkeeping";
+            return (
+              <Reveal
+                key={plan.title}
+                delay={index * 0.05}
+                className="h-auto w-full shrink-0 basis-full snap-center sm:basis-1/2 lg:h-auto lg:flex-1 lg:shrink lg:basis-auto"
+              >
+                <Card
+                  className={cn(
+                    "flex h-full flex-col",
+                    isFeatured
+                      ? "border-2 border-brass shadow-lg shadow-brass/10"
+                      : "border border-ink/10"
+                  )}
+                >
+                  <div className="flex h-full flex-col p-6 sm:p-7">
+                    <div className="flex flex-1 flex-col">
+                      {isFeatured && (
+                        <span className="mb-4 inline-flex w-fit items-center rounded-sm border border-brass/40 bg-brass/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-brass">
+                          Most Popular
+                        </span>
+                      )}
+                      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-ink/5">
+                        <plan.icon className="h-5 w-5 text-ink/70" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-ink">{plan.title}</h3>
+                      <div className="mt-3">
+                        <LedgerFigure
+                          value={plan.price}
+                          tone={isFeatured ? "brass" : "navy"}
+                          chip
+                          className="text-3xl"
+                        />
+                      </div>
+                      <p className="mt-3 text-sm leading-relaxed text-slate/70">
+                        {plan.description}
+                      </p>
+                      <div className="mt-6">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-ink/60">
+                          What&apos;s Included:
+                        </p>
+                        <ul className="mt-3 space-y-2.5">
+                          {plan.features.map((feature) => (
+                            <li
+                              key={feature}
+                              className="flex items-start gap-2.5 text-sm text-slate-700/80"
+                            >
+                              <Check className="mt-0.5 h-4 w-4 shrink-0 text-ledger" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <Button
+                      asChild
+                      size="lg"
+                      className="mt-8 w-full bg-ledger text-white hover:bg-ledger/90"
+                    >
+                      <Link href="/#contact">Get Started</Link>
+                    </Button>
+                  </div>
+                </Card>
+              </Reveal>
+            );
+          })}
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {plans.map((plan, index) => (
-            <motion.div
-              key={plan.title}
-              className="h-full"
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="h-full flex flex-col transition-shadow duration-300 hover:shadow-xl border-border">
-                <CardHeader className="text-center pb-2">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <plan.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="mt-4 text-lg font-semibold">{plan.title}</CardTitle>
-                  <div className="mt-2 flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-bold tracking-tight text-primary">{plan.price}</span>
-                    {plan.period && (
-                      <span className="text-sm font-medium text-foreground/60">{plan.period}</span>
-                    )}
-                  </div>
-                  <CardDescription className="mt-3 text-sm text-foreground/70">
-                    {plan.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow pt-4">
-                  <p className="mb-3 text-sm font-semibold text-foreground">What&apos;s Included:</p>
-                  <ul className="space-y-2.5">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2 text-sm text-foreground/80">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter className="pt-2">
-                  <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                    <Link href="#contact">Get Started</Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        <p className="mt-12 max-w-2xl mx-auto text-center text-sm text-foreground/70">
-          Need something different? Every client is unique. If your situation requires additional services or ongoing support,{" "}
-          <Link href="#contact" className="font-medium text-primary hover:underline">
-            contact us
-          </Link>{" "}
-          for a customized quote.
-        </p>
+        <Reveal delay={0.15}>
+          <p className="mx-auto mt-12 max-w-2xl text-center text-sm leading-relaxed text-slate/70">
+            Need something different? Every client is unique. If your situation requires additional services or ongoing support,{" "}
+            <Link href="/#contact" className="font-semibold text-ledger hover:underline">
+              contact us
+            </Link>{" "}
+            for a customized quote.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

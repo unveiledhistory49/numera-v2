@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Numera ledger design system tokens (see build plan §5) */
+@layer base {
+  :root {
+    --ink: #12213a;     /* primary dark — nav, hero panel, headers */
+    --ledger: #1f6f54;   /* primary accent — CTAs, links, checks */
+    --paper: #eef0ec;    /* light section bg (sage-tinted) */
+    --brass: #b98a34;    /* tertiary accent — figures, stats, hovers */
+    --slate: #5b6672;    /* secondary/body text on light bg */
+
+    --font-body: 'Public Sans';
+    --font-display: 'Fraunces';
+    --font-numerals: 'IBM Plex Mono';
+  }
+}
+
 @layer base {
   :root {
     --background: 210 17% 95%; /* Light Gray #ECEFF1 */
@@ -84,5 +99,39 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  /* Ledger-figure signature element (§5.4): monospace numerals, thin-bordered chip */
+  .ledger-figure {
+    font-family: var(--font-numerals), 'IBM Plex Mono', ui-monospace, monospace;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ledger-chip {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid currentColor;
+    padding: 0.28rem 0.6rem;
+    font-family: var(--font-numerals), 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 0.9em;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+    border-radius: 2px;
+  }
+}
+
+/* Reduced-motion: instant, non-animated render */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -10,11 +10,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
+        body: ['var(--font-body)', 'Public Sans', 'sans-serif'],
+        display: ['var(--font-display)', 'Fraunces', 'serif'],
+        numerals: ['var(--font-numerals)', 'IBM Plex Mono', 'monospace'],
         headline: ['Inter', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
+        ink: 'var(--ink)',
+        ledger: 'var(--ledger)',
+        paper: 'var(--paper)',
+        brass: 'var(--brass)',
+        slate: 'var(--slate)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

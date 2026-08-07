@@ -12,6 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Mail, Calendar, MapPin } from "lucide-react";
 import { sendContactMessage } from "@/ai/flows/contact-flow";
 import type { ContactMessageInput } from "@/ai/flows/contact-flow";
+import Reveal from "@/components/landing/Reveal";
 import React from "react";
 
 const formSchema = z.object({
@@ -20,6 +21,37 @@ const formSchema = z.object({
   phone: z.string().optional(),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
+
+const contactMethods = [
+  {
+    icon: Mail,
+    title: "Email",
+    description: "Reach out to us directly.",
+    value: (
+      <a
+        href="mailto:numeraservices@outlook.com"
+        className="font-medium text-ledger hover:underline underline-offset-4"
+      >
+        numeraservices@outlook.com
+      </a>
+    ),
+  },
+  {
+    icon: Calendar,
+    title: "Schedule A Meeting",
+    description: "Let&apos;s connect! Book a time that works for you.",
+    value: (
+      <a
+        href="https://calendly.com/victordebelu/consultation-with-numera-finance"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-ledger hover:underline underline-offset-4"
+      >
+        Book a meeting
+      </a>
+    ),
+  },
+];
 
 export default function Contact() {
   const { toast } = useToast();
@@ -60,117 +92,131 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-24">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">
+    <section id="contact" className="bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <Reveal className="max-w-2xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             Get in Touch
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg leading-8 text-foreground/80">
+          <p className="mt-4 text-lg leading-8 text-slate">
             Ready to take control of your finances? Contact us for a free, no-obligation consultation.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-2">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle>Contact Us</CardTitle>
-              <CardDescription>Fill out the form and our team will get back to you within 24 hours.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Full Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="John Doe" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address</FormLabel>
-                        <FormControl>
-                          <Input placeholder="you@example.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone Number (Optional)</FormLabel>
-                        <FormControl>
-                          <Input placeholder="(123) 456-7890" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Your Message</FormLabel>
-                        <FormControl>
-                          <Textarea placeholder="How can we help you?" className="min-h-[120px]" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={isSubmitting}>
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </Button>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
+        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-12">
+          <Reveal delay={0.05}>
+            <Card className="border border-ink/10">
+              <CardHeader>
+                <CardTitle className="text-ink">Contact Us</CardTitle>
+                <CardDescription className="text-slate">
+                  Fill out the form and our team will get back to you within 24 hours.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Full Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="John Doe" className="border-ink/15 focus:border-ledger focus:ring-ledger/30" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email Address</FormLabel>
+                          <FormControl>
+                            <Input placeholder="you@example.com" className="border-ink/15 focus:border-ledger focus:ring-ledger/30" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Phone Number (Optional)</FormLabel>
+                          <FormControl>
+                            <Input placeholder="(123) 456-7890" className="border-ink/15 focus:border-ledger focus:ring-ledger/30" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Your Message</FormLabel>
+                          <FormControl>
+                            <Textarea placeholder="How can we help you?" className="min-h-[120px] border-ink/15 focus:border-ledger focus:ring-ledger/30" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full bg-ledger text-white hover:bg-ledger/90"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                    </Button>
+                  </form>
+                </Form>
+              </CardContent>
+            </Card>
+          </Reveal>
 
-          <div className="space-y-8 my-auto">
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <Mail className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">Email</h3>
-                <p className="text-foreground/80">Reach out to us directly.</p>
-                <a href="mailto:numeraservices@outlook.com" className="text-primary hover:underline">numeraservices@outlook.com</a>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <Calendar className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">Schedule A Meeting</h3>
-                <p className="text-foreground/80">Let's connect! Book a time that works for you.</p>
-                <a href="https://calendly.com/victordebelu/consultation-with-numera-finance" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Book a meeting</a>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <MapPin className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">Office</h3>
-                <p className="text-foreground/80">274 Lynn Braxton St.</p>
-                <p className="text-foreground/80">San Francisco, CA 94159</p>
-              </div>
-            </div>
+          <div className="space-y-6">
+            {contactMethods.map((method, i) => (
+              <Reveal key={method.title} delay={0.1 + i * 0.08}>
+                <Card className="border border-ink/10">
+                  <CardContent className="flex items-start gap-4 p-6">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-ink/10">
+                      <method.icon className="h-5 w-5 text-ledger" strokeWidth={1.75} />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-ink">{method.title}</h3>
+                      <p className="mt-1 text-sm text-slate">{method.description}</p>
+                      <div className="mt-2 text-sm">{method.value}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Reveal>
+            ))}
+
+            <Reveal delay={0.34}>
+              <Card className="border border-ink/10">
+                <CardContent className="flex items-start gap-4 p-6">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-ink/10">
+                    <MapPin className="h-5 w-5 text-ledger" strokeWidth={1.75} />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-ink">Office</h3>
+                    <p className="mt-1 text-sm text-slate">
+                      <span className="ledger-figure font-numerals">274</span> Lynn Braxton St.
+                    </p>
+                    <p className="mt-0.5 text-sm text-slate">
+                      San Francisco, CA <span className="ledger-figure font-numerals">94159</span>
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Reveal>
           </div>
         </div>
       </div>

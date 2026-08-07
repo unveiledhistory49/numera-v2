@@ -1,8 +1,7 @@
 "use client";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { motion } from "framer-motion";
+import Reveal from "@/components/landing/Reveal";
 
 interface Service {
   icon: LucideIcon;
@@ -38,48 +37,35 @@ const services: Service[] = [
   }
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-};
-
 export default function Services() {
   return (
-    <section id="services" className="py-12 sm:py-16 lg:py-24">
+    <section id="services" className="bg-paper py-16 sm:py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">
+        <Reveal className="text-center">
+          <h2 className="font-display text-3xl text-ink sm:text-4xl">
             Our Services
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg leading-8 text-foreground/80">
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate">
             Comprehensive financial solutions designed for your peace of mind.
           </p>
-        </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        </Reveal>
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <Reveal
               key={service.title}
               className="h-full"
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              delay={index * 0.06}
             >
-              <Card className="text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col justify-between">
-                <div>
-                  <CardHeader>
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                      <service.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="mt-4 text-lg font-semibold">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-foreground/70">{service.description}</p>
-                  </CardContent>
+              <div className="flex h-full flex-col rounded-lg border border-ink/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md border border-ink/10">
+                  <service.icon className="h-5 w-5 text-ledger" strokeWidth={1.75} />
                 </div>
-              </Card>
-            </motion.div>
+                <h3 className="mt-5 font-semibold text-ink">{service.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate/70">
+                  {service.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

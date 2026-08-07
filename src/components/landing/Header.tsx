@@ -31,7 +31,7 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "bg-card shadow-md" : "bg-transparent"
+        isScrolled ? "border-b border-ink/20 bg-paper" : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
@@ -41,14 +41,14 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary">
+            <Link key={link.href} href={link.href} className="text-sm font-medium text-ink transition-colors hover:text-ledger">
               {link.label}
             </Link>
           ))}
         </nav>
 
         <div className="hidden md:block">
-          <Button asChild variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+          <Button asChild variant="default" className="bg-ledger text-white hover:bg-ledger/90">
             <a href="https://calendly.com/victordebelu/consultation-with-numera-finance" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
           </Button>
         </div>
@@ -70,11 +70,11 @@ export default function Header() {
                   <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-14 w-auto" priority />
                 </Link>
                 {navLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className="text-lg font-medium hover:text-primary">
+                  <Link key={link.href} href={link.href} className="text-lg font-medium text-ink hover:text-ledger">
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild variant="default" className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button asChild variant="default" className="mt-4 bg-ledger text-white hover:bg-ledger/90">
                   <a href="https://calendly.com/victordebelu/consultation-with-numera-finance" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
                 </Button>
               </div>

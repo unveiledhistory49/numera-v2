@@ -39,7 +39,7 @@ const contactMethods = [
   {
     icon: Calendar,
     title: "Schedule A Meeting",
-    description: "Let&apos;s connect! Book a time that works for you.",
+    description: "Let's connect! Book a time that works for you.",
     value: (
       <a
         href="https://calendly.com/victordebelu/consultation-with-numera-finance"

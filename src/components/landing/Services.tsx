@@ -1,5 +1,5 @@
 "use client";
-import { BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap } from "lucide-react";
+import { BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Reveal from "@/components/landing/Reveal";
 
@@ -34,6 +34,11 @@ const services: Service[] = [
     icon: GraduationCap,
     title: "Student Loan Forgiveness Assistance",
     description: "Navigate the complex landscape of federal and private student loan forgiveness options. We help identify qualifying programs, organize documentation, and manage applications to reduce or eliminate your educational debt."
+  },
+  {
+    icon: ShieldCheck,
+    title: "Credit Repair",
+    description: "We review your credit reports for errors, outdated items, and unfair listings, then dispute inaccuracies with the credit bureaus. Our goal is to help you build a stronger credit profile and unlock better financial opportunities."
   }
 ];
 

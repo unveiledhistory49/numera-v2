@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap } from "lucide-react";
+import { Check, BookOpenCheck, ReceiptText, Users, Lightbulb, GraduationCap, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import LedgerFigure from "@/components/landing/LedgerFigure";
@@ -86,6 +86,20 @@ const plans: PricingPlan[] = [
       "Employment certification assistance (if applicable)",
       "Document review before submission",
       "Guidance until your application is successfully approved",
+    ],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Credit Repair",
+    price: "$279",
+    description: "Improve your credit profile with expert dispute and repair services.",
+    features: [
+      "Full credit report review (all 3 bureaus)",
+      "Identification of inaccurate or unfair items",
+      "Dispute letters prepared and filed on your behalf",
+      "Bureau correspondence tracking",
+      "Ongoing guidance throughout the repair process",
+      "Personalized credit improvement recommendations",
     ],
   },
 ];

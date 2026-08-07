@@ -34,9 +34,9 @@ export default function Header() {
         isScrolled ? "border-b border-ink/20 bg-paper" : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 lg:h-20">
         <Link href="/" className="flex items-center gap-2 text-primary">
-          <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-20 w-auto" priority />
+          <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-12 w-auto lg:h-14" priority />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">

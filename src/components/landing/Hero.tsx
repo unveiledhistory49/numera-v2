@@ -10,10 +10,10 @@ export default function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative bg-paper pt-10 pb-12 sm:pt-12 sm:pb-16 lg:pt-14">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-2 lg:gap-8">
-          <div className="flex items-center bg-ink p-8 sm:p-12 lg:p-16">
+    <section className="relative overflow-hidden bg-paper pt-10 pb-12 sm:pt-12 sm:pb-16 lg:pt-16 lg:pb-20 xl:pt-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-stretch gap-0 lg:grid-cols-[1.05fr_1fr] lg:gap-10 xl:gap-14">
+          <div className="flex items-center bg-ink p-8 sm:p-12 lg:p-12 xl:p-16">
             <div>
               <motion.h1
                 initial={reduce ? false : { opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0 }}
             animate={reduce ? false : { opacity: 1 }}
             transition={{ delay: reduce ? 0 : 0.1, duration: reduce ? 0 : 0.6, ease: "easeOut" }}
-            className="relative h-72 sm:h-96 lg:h-auto w-full"
+            className="relative h-72 w-full overflow-hidden sm:h-96 lg:h-auto lg:min-h-[420px] xl:min-h-[480px]"
           >
             <div className="absolute inset-0">
               <Image

@@ -93,7 +93,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-2xl">
           <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             Get in Touch

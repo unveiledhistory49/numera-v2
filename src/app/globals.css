@@ -124,6 +124,13 @@
   }
 }
 
+@layer base {
+  /* Keep anchored sections clear of the sticky header on all viewports */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
 /* Reduced-motion: instant, non-animated render */
 @media (prefers-reduced-motion: reduce) {
   *,

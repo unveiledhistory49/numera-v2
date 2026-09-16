@@ -6,7 +6,7 @@ import Reveal from '@/components/landing/Reveal';
 export default function About() {
   return (
     <section id="about" className="bg-white py-16 sm:py-20">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal className="order-2 lg:order-1">
             <h2 className="font-display text-3xl text-ink sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">

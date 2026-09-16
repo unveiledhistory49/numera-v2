@@ -32,7 +32,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section id="testimonials" className="bg-paper py-16 sm:py-20">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center">
             <h2 className="font-display text-ink text-3xl font-semibold sm:text-4xl">
@@ -43,7 +43,7 @@ export default function Testimonials() {
             </p>
           </div>
         </Reveal>
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((testimonial, index) => (
             <Reveal key={index} delay={index * 0.06} className="h-full">
               <figure className="flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6">

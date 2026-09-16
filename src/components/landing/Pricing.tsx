@@ -92,7 +92,7 @@ const plans: PricingPlan[] = [
 export default function Pricing() {
   return (
     <section id="pricing" className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center">
             <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
@@ -107,12 +107,12 @@ export default function Pricing() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
           {plans.map((plan, index) => (
             <Reveal
               key={plan.title}
               delay={index * 0.05}
-              className="h-full"
+              className={index < 3 ? "h-full lg:col-span-2" : "h-full lg:col-span-3"}
             >
               <Card
                 className="flex h-full flex-col border border-ink/10"

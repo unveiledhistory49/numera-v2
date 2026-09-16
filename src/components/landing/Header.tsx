@@ -34,12 +34,12 @@ export default function Header() {
         isScrolled ? "border-b border-ink/10 bg-white/70 backdrop-blur-md" : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 lg:h-20">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8">
         <Link href="/" className="flex items-center gap-2 text-primary">
           <Image src="/numera.svg" alt="Numera Logo" width={244} height={70} className="h-12 w-auto lg:h-14" priority />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm font-medium text-ink transition-colors hover:text-ledger">
               {link.label}
@@ -47,13 +47,13 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Button asChild variant="default" className="bg-ledger text-white hover:bg-ledger/90">
             <a href="https://calendly.com/victordebelu/consultation-with-numera-finance" target="_blank" rel="noopener noreferrer">Request a Consultation</a>
           </Button>
         </div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">

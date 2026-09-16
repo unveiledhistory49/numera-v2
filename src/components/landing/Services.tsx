@@ -40,7 +40,7 @@ const services: Service[] = [
 export default function Services() {
   return (
     <section id="services" className="bg-paper py-16 sm:py-20">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center">
           <h2 className="font-display text-3xl text-ink sm:text-4xl">
             Our Services
@@ -49,11 +49,17 @@ export default function Services() {
             Comprehensive financial solutions designed for your peace of mind.
           </p>
         </Reveal>
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-8">
           {services.map((service, index) => (
             <Reveal
               key={service.title}
-              className="h-full"
+              className={
+                index < 3
+                  ? "h-full lg:col-span-2"
+                  : index < 4
+                    ? "h-full lg:col-span-3"
+                    : "h-full sm:col-span-2 lg:col-span-3"
+              }
               delay={index * 0.06}
             >
               <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
